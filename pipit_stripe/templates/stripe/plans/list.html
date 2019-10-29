@@ -1,0 +1,25 @@
+<perch:before>
+    <h2>Plans</h2>
+
+    <ul>
+</perch:before>
+    <li>
+        <perch:stripe id="nickname">
+        <p>
+            Interval: <perch:stripe id="interval">
+            <br>
+            Currency: <perch:stripe id="currency">
+            <br>
+            Amount: <perch:stripe id="amount">
+            <br>
+            Amount Formatted: <perch:stripe id="amount_formatted">
+        </p>
+
+        <perch:member logged-in="true">
+            <perch:template path="subscribe_dynamic_btn">
+        </perch:member>
+
+    </li>
+<perch:after>
+    </ul>
+</perch:after>

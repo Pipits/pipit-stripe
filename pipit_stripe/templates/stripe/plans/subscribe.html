@@ -1,0 +1,30 @@
+<script>
+    var checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener('click', function () {
+        // When the customer clicks on the button, redirect
+        // them to Checkout.
+        stripe.redirectToCheckout({
+            items: [{plan: "<perch:stripe id="plan">", quantity: <perch:stripe id="qty">}],
+
+            successUrl: "<perch:stripe id="return_url">",
+            cancelUrl: "<perch:stripe id="cancel_url">",
+            customerEmail: "<perch:stripe id="customer_email">",
+        })
+        .then(function (result) {
+            if (result.error) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, display the localized error message to your customer.
+                var displayError = document.getElementById('error-message');
+                displayError.textContent = result.error.message;
+            }
+        });
+    });
+</script>
+
+
+<button id="checkout-button" role="link">
+    Subscribe
+</button>
+
+<div id="error-message" class="error"></div>

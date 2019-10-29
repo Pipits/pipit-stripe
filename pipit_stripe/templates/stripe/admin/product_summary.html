@@ -1,0 +1,68 @@
+
+<div class="inner">
+    <div id="dashboard" class="dashboard" style="height:auto">
+    
+        <div data-app="content" class="widget">
+            <div class="dash-content">
+                <header>
+                    <h2>Details</h2>
+                </header>
+                <div class="body">
+
+                    <table class="fig" style="margin-bottom:0">
+                        <tr>
+                            <td>Name</td>
+                            <td class="note"><perch:content id="name"></td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td class="note"><perch:content id="id"></td>
+                        </tr>
+                        <tr>
+                            <td>Created</td>
+                            <td class="note"><perch:content id="created" type="date" format="d/m/Y - H:i:s"></td>
+                        </tr>
+                        <tr>
+                            <td>Updated</td>
+                            <td class="note"><perch:content id="updated" type="date" format="d/m/Y - H:i:s"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <div data-app="content" class="widget">
+            <div class="dash-content">
+                <header>
+                    <h2>Meta Data</h2>
+                </header>
+                <div class="body">
+                    <table class="fig" style="margin-bottom:0">
+                        <perch:repeater id="metadata">
+                            <tr>
+                                <td>
+                                    <perch:content id="label">
+                                </td>
+                                <td class="note">
+                                    <perch:content id="value">
+                                </td>
+                            </tr>
+                            <perch:noresults>
+                                <tr>
+                                    <td>None found</td>
+                                </tr>
+                            </perch:noresults>
+                        </perch:repeater>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
